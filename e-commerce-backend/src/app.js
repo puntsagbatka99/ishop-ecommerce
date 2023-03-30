@@ -5,11 +5,13 @@ import cors from "cors";
 import mongoose from "mongoose";
 import menuApi from "./routes/menu-api";
 import adminApi from "./routes/admin-api";
+import * as dotenv from "dotenv"
+
+dotenv.config()
 
 const app = express();
-const PORT = 8181;
-const MONGODB_CONNECTION_STRING =
-  "mongodb+srv://puntsagbatka99:Hujshand2020@cluster0.ymsry8p.mongodb.net/ishop";
+const PORT = process.env.PORT;
+const MONGODB_CONNECTION_STRING = process.env.MONGODB_CONNECTION_STRING
 
 app.use(cors());
 app.use(express.json());
